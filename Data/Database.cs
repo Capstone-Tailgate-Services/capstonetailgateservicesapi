@@ -15,15 +15,15 @@ namespace API.Data
 
         public Database()
         {
-            string server = Environment.GetEnvironmentVariable("cts_database_server");
-            string name = Environment.GetEnvironmentVariable("cts_database_name");
-            string port = Environment.GetEnvironmentVariable("cts_database_port");
-            string username = Environment.GetEnvironmentVariable("cts_database_username");
-            string password = Environment.GetEnvironmentVariable("cts_database_password");
+            string server = "sql5.freemysqlhosting.net";
+            string user="sql5453134";
+            string database="sql5453134";
+            string port="3306";
+            string password="dAJNxRiMz5";
             
             Console.WriteLine("got the datbase " + server);
 
-            this.ConnString = $@"server = {server};user={username};database={name};port={port};password={password};AllowLoadLocalInfile=true";
+            this.ConnString = $@"server = {server};user={user};database={database};port={port};password={password};AllowLoadLocalInfile=true";
             this.Conn = new MySqlConnection(this.ConnString);
         }
 
