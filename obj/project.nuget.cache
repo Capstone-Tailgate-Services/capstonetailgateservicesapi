@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7GXsO3iZZtBL08iwmrUEzJ/g9ChysgZTCm1gzvBTiRrc1oR19p441pGq4uVwY+5pohC9MAiTqafTIdxCGGjSoA==",
+  "dgSpecHash": "qUCLlz/e6PJGQFZ8uqak5aNa5qB0irEbEFRjbUoTFqiW0jsYqxj3nuvZ79mh6d70KBNKvuU7G6ePBNrbKNv/BQ==",
   "success": true,
-  "projectFilePath": "C:\\JoshuaWigginsMIS321\\repos\\CTS\\Capstone-Tailgate-Services\\API\\API.csproj",
+  "projectFilePath": "C:\\JoshuaWigginsMIS321\\repos2\\CTSclient\\capstonetailgateservicesapi\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Joshua Wiggins\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\Joshua Wiggins\\.nuget\\packages\\google.protobuf\\3.14.0\\google.protobuf.3.14.0.nupkg.sha512",

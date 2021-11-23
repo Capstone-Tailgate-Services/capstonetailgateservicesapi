@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\JoshuaWigginsMIS321\\repos\\CTS\\Capstone-Tailgate-Services\\API\\API.csproj": {}
+    "C:\\JoshuaWigginsMIS321\\repos2\\CTSclient\\capstonetailgateservicesapi\\API.csproj": {}
   },
   "projects": {
-    "C:\\JoshuaWigginsMIS321\\repos\\CTS\\Capstone-Tailgate-Services\\API\\API.csproj": {
+    "C:\\JoshuaWigginsMIS321\\repos2\\CTSclient\\capstonetailgateservicesapi\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\JoshuaWigginsMIS321\\repos\\CTS\\Capstone-Tailgate-Services\\API\\API.csproj",
+        "projectUniqueName": "C:\\JoshuaWigginsMIS321\\repos2\\CTSclient\\capstonetailgateservicesapi\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\JoshuaWigginsMIS321\\repos\\CTS\\Capstone-Tailgate-Services\\API\\API.csproj",
+        "projectPath": "C:\\JoshuaWigginsMIS321\\repos2\\CTSclient\\capstonetailgateservicesapi\\API.csproj",
         "packagesPath": "C:\\Users\\Joshua Wiggins\\.nuget\\packages\\",
-        "outputPath": "C:\\JoshuaWigginsMIS321\\repos\\CTS\\Capstone-Tailgate-Services\\API\\obj\\",
+        "outputPath": "C:\\JoshuaWigginsMIS321\\repos2\\CTSclient\\capstonetailgateservicesapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Joshua Wiggins\\AppData\\Roaming\\NuGet\\NuGet.Config"
