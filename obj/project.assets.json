@@ -7482,19 +7482,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Joshua Wiggins\\.nuget\\packages\\": {}
+    "C:\\Users\\Skwaf\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\JoshuaWigginsMIS321\\repos2\\CTSclient\\capstonetailgateservicesapi\\API.csproj",
+      "projectUniqueName": "C:\\source\\FallRepos\\capstonetailgateservicesapi\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\JoshuaWigginsMIS321\\repos2\\CTSclient\\capstonetailgateservicesapi\\API.csproj",
-      "packagesPath": "C:\\Users\\Joshua Wiggins\\.nuget\\packages\\",
-      "outputPath": "C:\\JoshuaWigginsMIS321\\repos2\\CTSclient\\capstonetailgateservicesapi\\obj\\",
+      "projectPath": "C:\\source\\FallRepos\\capstonetailgateservicesapi\\API.csproj",
+      "packagesPath": "C:\\Users\\Skwaf\\.nuget\\packages\\",
+      "outputPath": "C:\\source\\FallRepos\\capstonetailgateservicesapi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Joshua Wiggins\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Skwaf\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -7557,7 +7557,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
