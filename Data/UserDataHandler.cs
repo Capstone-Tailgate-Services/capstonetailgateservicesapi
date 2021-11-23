@@ -25,7 +25,6 @@ namespace API.Data
                 Userid = item.userid, 
                 Useremail = item.useremail,
                 Userpassword = item.userpassword,
-                UserPhoneNo = item.userphoneno
                 };
             user.Add(temp);
             }
