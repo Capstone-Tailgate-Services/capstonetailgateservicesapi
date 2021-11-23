@@ -16,7 +16,7 @@ namespace API.Data
         }
          public List<Review> Select(){
             db.Open();
-            string sql = "SELECT * FROM reviews";           
+            string sql = "SELECT * FROM reviews order by date desc";           
             List<ExpandoObject> results = db.Select(sql);
 
             List<Review> review = new List<Review>();
@@ -26,7 +26,7 @@ namespace API.Data
                 Reviewstext = item.reviewstext,
                 Reviewsauthor = item.reviewsauthor,
                 Reviewsrating  = item.reviewsrating,
-                /*Date = item.date,*/
+                Date = item.date,
                 Useremail = item.useremail,
                 };
             review.Add(temp);
@@ -36,7 +36,7 @@ namespace API.Data
          }
          public void Update(Review review)
          {
-            /*review.Date = DateTime.Now;*/
+            review.Date = DateTime.Now;
             string sql = "UPDATE reviews SET reviewstext=@Reviewstext, date=@date ";  
             sql+="WHERE id=@id";
             var values = GetValues(review);
@@ -53,7 +53,7 @@ namespace API.Data
             db.Close();
          }
          public void Insert(Review review){
-            /*review.Date = DateTime.Now;*/
+            review.Date = DateTime.Now;
             var values = GetValues(review);
             string sql = "INSERT INTO reviews(reviewstext, date)"; 
             sql+="VALUES(@reviewstext, @date)";
@@ -70,7 +70,7 @@ namespace API.Data
                  {"@reviewstext",review.Reviewstext},
                  {"@reviewsauthor",review.Reviewsauthor},
                  {"@reviewsrating",review.Reviewsrating},
-                 /*{"@date",review.Date},*/
+                 {"@date",review.Date},
                  {"@useremail",review.Useremail},
              };
 
