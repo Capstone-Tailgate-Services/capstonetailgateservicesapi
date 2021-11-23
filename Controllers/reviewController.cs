@@ -50,7 +50,7 @@ namespace API.Controllers
         }
 
         // DELETE: api/review/5
-        [EnableCors("OtherPolicy")]
+        [EnableCors("OpenPolicy")]
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
