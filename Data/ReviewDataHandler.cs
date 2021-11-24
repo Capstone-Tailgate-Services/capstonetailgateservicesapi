@@ -26,7 +26,7 @@ namespace API.Data
                 Reviewstext = item.reviewstext,
                 Reviewsauthor = item.reviewsauthor,
                 Reviewsrating  = item.reviewsrating,
-                Date = Convert.ToString(item.date),
+                Date = item.date,
                 Useremail = item.useremail,
                 };
             review.Add(temp);
