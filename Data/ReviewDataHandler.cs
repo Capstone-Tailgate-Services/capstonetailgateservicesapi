@@ -16,7 +16,7 @@ namespace API.Data
         }
          public List<Review> Select(){
             db.Open();
-            string sql = "SELECT * FROM reviews order by date desc";           
+            string sql = "SELECT * FROM reviews order by id desc";           
             List<ExpandoObject> results = db.Select(sql);
 
             List<Review> review = new List<Review>();
