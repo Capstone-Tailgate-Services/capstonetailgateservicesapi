@@ -26,7 +26,7 @@ namespace API.Data
                 Reviewstext = item.reviewstext,
                 Reviewsauthor = item.reviewsauthor,
                 Reviewsrating  = item.reviewsrating,
-                /*Date = item.date,*/
+                Date = Convert.ToString(item.date),
                 Useremail = item.useremail,
                 };
             review.Add(temp);
@@ -37,7 +37,7 @@ namespace API.Data
          public void Update(Review review)
          {
             /*review.Date = DateTime.Now;*/
-            string sql = "UPDATE reviews SET reviewstext=@Reviewstext ";  
+            string sql = "UPDATE reviews SET reviewstext=@Reviewstext, date=@date ";  
             sql+="WHERE id=@id";
             var values = GetValues(review);
             db.Open();
@@ -55,8 +55,8 @@ namespace API.Data
          public void Insert(Review review){
             /*review.Date = DateTime.Now;*/
             var values = GetValues(review);
-            string sql = "INSERT INTO reviews(reviewstext)"; 
-            sql+="VALUES(@reviewstext)";
+            string sql = "INSERT INTO reviews(reviewstext, date)"; 
+            sql+="VALUES(@reviewstext, @date)";
             db.Open();
             db.Insert(sql, values);
             db.Close();
@@ -70,7 +70,7 @@ namespace API.Data
                  {"@reviewstext",review.Reviewstext},
                  {"@reviewsauthor",review.Reviewsauthor},
                  {"@reviewsrating",review.Reviewsrating},
-                 /*{"@date",review.Date},*/
+                 {"@date",review.Date},
                  {"@useremail",review.Useremail},
              };
 
