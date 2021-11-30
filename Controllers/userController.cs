@@ -57,5 +57,13 @@ namespace API.Controllers
             User value = new User(){Userid=id};
             value.dataHandler.Delete(value);
         }
+
+        [EnableCors("OpenPolicy")]        
+        [HttpPut]
+        public List<User> LogInUser()
+        {
+            IUserDataHandler loginObj = new UserDataHandler();
+            return loginObj.FindUser();
+        }
     }
 }

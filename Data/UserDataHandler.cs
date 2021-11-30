@@ -56,7 +56,32 @@ namespace API.Data
             db.Insert(sql, values);
             db.Close();
          }
+         public void GetUser(User user)
+        {
+            db.Open();
+            string sql = "SELECT * FROM user WHERE userid=@userid";
+            var values = GetValues(user);
+            db.Open();
+            db.Update(sql, values);
+            db.Close();
+        }
+        public List<User> FindUser(){
+            db.Open();
+            string sql = "SELECT * FROM user WHERE userid=@userid and password=@password";           
+            List<ExpandoObject> results = db.Select(sql);
 
+            List<User> user = new List<User>();
+            foreach(dynamic item in results){
+                User temp = new User(){
+                Userid = item.userid, 
+                Useremail = item.useremail,
+                Userpassword = item.userpassword,
+                };
+            user.Add(temp);
+            }
+            db.Close();
+            return user;
+         }
          public Dictionary<string,object> GetValues(User user)
          {
              var values = new Dictionary<string,object>()
