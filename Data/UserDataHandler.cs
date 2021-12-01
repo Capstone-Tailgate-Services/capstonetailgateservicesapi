@@ -19,7 +19,7 @@ namespace API.Data
         }
         public List<User> Select(User user)
         {
-            string sql = "SELECT admin FROM user WHERE admin = 1";
+            string sql = "SELECT admin FROM user";
             db.Open();
             if(user.Admin == 1)
             {
