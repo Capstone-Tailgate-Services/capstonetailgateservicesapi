@@ -58,12 +58,12 @@ namespace API.Controllers
             value.dataHandler.Delete(value);
         }
 
-        [EnableCors("OpenPolicy")]        
+        /*[EnableCors("OpenPolicy")]        
         [HttpPut]
         public List<User> LogInUser()
         {
             IUserDataHandler loginObj = new UserDataHandler();
             return loginObj.FindUser();
-        }
+        }*/
     }
 }

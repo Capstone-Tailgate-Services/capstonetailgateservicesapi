@@ -59,13 +59,13 @@ namespace API.Data
          public void GetUser(User user)
         {
             db.Open();
-            string sql = "SELECT * FROM user WHERE userid=@userid";
+            string sql = "SELECT * FROM user WHERE userid=@userid and password=@password";
             var values = GetValues(user);
             db.Open();
             db.Update(sql, values);
             db.Close();
         }
-        public List<User> FindUser(){
+        /*public List<User> FindUser(){
             db.Open();
             string sql = "SELECT * FROM user WHERE userid=@userid and password=@password";           
             List<ExpandoObject> results = db.Select(sql);
@@ -81,7 +81,7 @@ namespace API.Data
             }
             db.Close();
             return user;
-         }
+         }*/
          public Dictionary<string,object> GetValues(User user)
          {
              var values = new Dictionary<string,object>()

@@ -9,6 +9,7 @@ namespace API.Interfaces
          public void Delete(User user);
          public void Insert(User user);
          public void Update(User user);
-        public List<User> FindUser();
+         public void GetUser(User user);
+        /*public List<User> FindUser();*/
     }
 }
