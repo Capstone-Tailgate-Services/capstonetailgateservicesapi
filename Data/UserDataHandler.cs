@@ -19,7 +19,7 @@ namespace API.Data
         }
         public List<User> Select()
         {
-            string sql = "SELECT * FROM user WHERE useremail= nicksaban@aol.com and userpassword=bama";
+            string sql = "SELECT*FROM user WHERE useremail=nicksaban@aol.com";
             db.Open();
             /*if(user.Admin == 2)
             {
