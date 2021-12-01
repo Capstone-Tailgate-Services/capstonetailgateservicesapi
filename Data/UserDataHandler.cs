@@ -17,7 +17,7 @@ namespace API.Data
         {
             db = new Database();
         }
-        public List<User> Select(User user2)
+        public List<User> Select()
         {
             string sql = "SELECT * FROM user";
             db.Open();

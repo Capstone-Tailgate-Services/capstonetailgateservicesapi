@@ -21,7 +21,7 @@ namespace API.Controllers
         public List<User> Getuser([FromBody] User value)
         {
             IUserDataHandler dataHandler = new UserDataHandler();
-            return dataHandler.Select(value);
+            return dataHandler.Select();
         }
 
         // GET: api/user/5
