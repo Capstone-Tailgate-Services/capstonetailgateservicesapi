@@ -21,10 +21,10 @@ namespace API.Data
         {
             string sql = "SELECT * FROM user";
             db.Open();
-            if(user.Admin == 2)
+            /*if(user.Admin == 2)
             {
                 sql+= "WHERE useremail= @useremail and userpassword=@userpassword";
-            }
+            }*/
             List<ExpandoObject> results = db.Select(sql);
 
             List<User> user2 = new List<User>();
