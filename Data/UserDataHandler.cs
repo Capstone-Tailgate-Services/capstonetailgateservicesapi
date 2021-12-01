@@ -17,17 +17,13 @@ namespace API.Data
         {
             db = new Database();
         }
-        public List<User> Select(User user)
+        public List<User> Select()
         {
-            string sql = "SELECT admin FROM user";
             db.Open();
-            if(user.Admin == 1)
-            {
-                sql+= "SELECT admin FROM user WHERE useremail= @userid and userpassword=@userpassword";
-            }
+            string sql = "SELECT * FROM user";           
             List<ExpandoObject> results = db.Select(sql);
 
-            List<User> user2 = new List<User>();
+            List<User> user = new List<User>();
             foreach(dynamic item in results)
             {
                 User temp = new User()
@@ -37,10 +33,10 @@ namespace API.Data
                 Userpassword = item.userpassword,
                 Admin = item.admin,
                 };
-                user2.Add(temp);
+                user.Add(temp);
             }
             db.Close();
-            return user2;
+            return user;
         }
          public void Update(User user)
          {
@@ -69,7 +65,7 @@ namespace API.Data
          }
          public void GetUser(User user)
         {
-            string sql = "SELECT admin FROM user WHERE useremail= @userid and userpassword=@userpassword";
+            string sql = "SELECT admin FROM user WHERE userid= @userid and password=@password";
             var values = GetValues(user);
             db.Open();
             db.Update(sql, values);
