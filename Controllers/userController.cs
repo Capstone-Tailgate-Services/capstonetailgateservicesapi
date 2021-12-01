@@ -27,7 +27,7 @@ namespace API.Controllers
         // GET: api/user/5
         /*[EnableCors("OpenPolicy")]
         [HttpGet("{id}")]
-        public string GetUser(int id)
+        public void MatchUser(int id)
         {
             User value = new User(){Userid=id};
             value.dataHandler.GetUser(value);
