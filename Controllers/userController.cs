@@ -25,13 +25,13 @@ namespace API.Controllers
         }
 
         // MATCH: api/user
-        /*[EnableCors("OpenPolicy")]
-        [HttpGet]
+        [EnableCors("OpenPolicy")]
+        [HttpPost]
         public List<User> MatchUser([FromBody] User value)
         {
             IUserDataHandler dataHandler = new UserDataHandler();
             return dataHandler.Match(value);
-        }*/
+        }
 
         // POST: api/user
         [EnableCors("OpenPolicy")]
