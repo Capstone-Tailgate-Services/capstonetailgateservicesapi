@@ -20,7 +20,7 @@ namespace API.Data
         public List<User> Select()
         {
             db.Open();
-            string sql = "SELECT * FROM user where admin = 1";           
+            string sql = "SELECT admin FROM user WHERE useremail= @useremail and userpassword=@userpassword";           
             List<ExpandoObject> results = db.Select(sql);
 
             List<User> user = new List<User>();
