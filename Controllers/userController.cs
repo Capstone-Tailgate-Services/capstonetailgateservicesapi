@@ -24,14 +24,14 @@ namespace API.Controllers
             return dataHandler.Select();
         }
 
-        // GET: api/user/5
-        /*[EnableCors("OpenPolicy")]
-        [HttpGet("{id}")]
-        public void MatchUser(int id)
+        // MATCH: api/user
+        [EnableCors("OpenPolicy")]
+        [HttpPost]
+        public List<User> MatchUser([FromBody] User value)
         {
-            User value = new User(){Userid=id};
-            value.dataHandler.GetUser(value);
-        }*/
+            IUserDataHandler dataHandler = new UserDataHandler();
+            return dataHandler.Match(value);
+        }
 
         // POST: api/user
         [EnableCors("OpenPolicy")]
