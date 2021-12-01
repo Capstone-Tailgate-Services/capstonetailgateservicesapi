@@ -19,7 +19,7 @@ namespace API.Data
         }
         public List<User> Select()
         {
-            string sql = "SELECT*FROM user WHERE useremail=nicksaban@aol.com";
+            string sql = "SELECT * FROM user";
             db.Open();
             /*if(user.Admin == 2)
             {
@@ -44,7 +44,7 @@ namespace API.Data
         }
         public List<User> Match(User user)
         {
-            string sql = "SELECT useremail, userpassword FROM user WHERE useremail= @useremail and userpassword=@userpassword";
+            string sql = "SELECT * FROM user WHERE useremail= @useremail and userpassword=@userpassword";
             var values = GetValues(user);
             db.Open();
 
