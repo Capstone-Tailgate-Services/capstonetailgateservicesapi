@@ -18,10 +18,10 @@ namespace API.Controllers
         // GET: api/user
         [EnableCors("OpenPolicy")]
         [HttpGet]
-        public List<User> Getuser()
+        public List<User> Getuser([FromBody] User value)
         {
             IUserDataHandler dataHandler = new UserDataHandler();
-            return dataHandler.Select();
+            return dataHandler.Select(value);
         }
 
         // GET: api/user/5

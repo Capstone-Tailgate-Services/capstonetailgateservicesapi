@@ -1,3 +1,5 @@
+using System.Data;
+using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using System;
 using System.Dynamic;
@@ -15,13 +17,17 @@ namespace API.Data
         {
             db = new Database();
         }
-        public List<User> Select()
+        public List<User> Select(User user)
         {
+            string sql = "SELECT admin FROM user WHERE admin = 1";
             db.Open();
-            string sql = "SELECT * FROM user";           
+            if(user.Admin == 1)
+            {
+                sql+= "SELECT admin FROM user WHERE useremail= @userid and userpassword=@userpassword";
+            }
             List<ExpandoObject> results = db.Select(sql);
 
-            List<User> user = new List<User>();
+            List<User> user2 = new List<User>();
             foreach(dynamic item in results)
             {
                 User temp = new User()
@@ -31,10 +37,10 @@ namespace API.Data
                 Userpassword = item.userpassword,
                 Admin = item.admin,
                 };
-                user.Add(temp);
+                user2.Add(temp);
             }
             db.Close();
-            return user;
+            return user2;
         }
          public void Update(User user)
          {
@@ -63,7 +69,7 @@ namespace API.Data
          }
          public void GetUser(User user)
         {
-            string sql = "SELECT admin FROM user WHERE userid= @userid and password=@password";
+            string sql = "SELECT admin FROM user WHERE useremail= @userid and userpassword=@userpassword";
             var values = GetValues(user);
             db.Open();
             db.Update(sql, values);
