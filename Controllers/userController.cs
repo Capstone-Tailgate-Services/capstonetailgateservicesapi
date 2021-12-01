@@ -25,13 +25,13 @@ namespace API.Controllers
         }
 
         // GET: api/user/5
-        [EnableCors("OpenPolicy")]
-
-        [HttpGet("{id}", Name = "Getuser")]
-        public string Getuser(int id)
+        /*[EnableCors("OpenPolicy")]
+        [HttpGet("{id}")]
+        public string GetUser(int id)
         {
-            return "value";
-        }
+            User value = new User(){Userid=id};
+            value.dataHandler.GetUser(value);
+        }*/
 
         // POST: api/user
         [EnableCors("OpenPolicy")]

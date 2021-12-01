@@ -8,6 +8,7 @@ namespace API.models
         public int Userid{get; set;}
         public string Useremail {get; set;}
         public string Userpassword {get; set;}
+        public int Admin{get; set;}
         public IUserDataHandler dataHandler{get; set;}
 
         public User(){
