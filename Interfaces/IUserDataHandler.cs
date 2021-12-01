@@ -5,7 +5,7 @@ namespace API.Interfaces
 {
     public interface IUserDataHandler
     {
-         public List<User> Select(User user);
+         public List<User> Select(User user2);
          public void Delete(User user);
          public void Insert(User user);
          public void Update(User user);

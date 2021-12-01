@@ -17,7 +17,7 @@ namespace API.Data
         {
             db = new Database();
         }
-        public List<User> Select(User user)
+        public List<User> Select(User user2)
         {
             string sql = "SELECT * FROM user";
             db.Open();
@@ -27,7 +27,7 @@ namespace API.Data
             }*/
             List<ExpandoObject> results = db.Select(sql);
 
-            List<User> user2 = new List<User>();
+            List<User> user = new List<User>();
             foreach(dynamic item in results)
             {
                 User temp = new User()
@@ -37,10 +37,10 @@ namespace API.Data
                 Userpassword = item.userpassword,
                 Admin = item.admin,
                 };
-                user2.Add(temp);
+                user.Add(temp);
             }
             db.Close();
-            return user2;
+            return user;
         }
          public void Update(User user)
          {
