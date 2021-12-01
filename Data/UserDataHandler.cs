@@ -42,7 +42,7 @@ namespace API.Data
             db.Close();
             return user;
         }
-        public List<User> Match(User user)
+        /*public List<User> Match(User user)
         {
             string sql = "SELECT * FROM user WHERE useremail= @useremail and userpassword=@userpassword";
             var values = GetValues(user);
@@ -64,7 +64,7 @@ namespace API.Data
             }
             db.Close();
             return userMatch;
-        }
+        }*/
          public void Update(User user)
          {
             string sql = "UPDATE user SET useremail=@useremail, userpassword=@userpassword ";  
@@ -90,14 +90,14 @@ namespace API.Data
             db.Insert(sql, values);
             db.Close();
          }
-         public void GetUser(User user)
+         /*public void GetUser(User user)
         {
             string sql = "SELECT admin FROM user WHERE useremail= @userid and userpassword=@userpassword";
             var values = GetValues(user);
             db.Open();
             db.Update(sql, values);
             db.Close();
-        }
+        }*/
         
          public Dictionary<string,object> GetValues(User user)
          {
