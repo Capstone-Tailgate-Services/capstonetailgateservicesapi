@@ -51,8 +51,8 @@ namespace API.Data
          }
          public void Insert(User user){
             var values = GetValues(user);
-            string sql = "INSERT INTO user(useremail, userpassword, admin)"; 
-            sql+="VALUES(@useremail, @userpassword, @admin)";
+            string sql = "INSERT INTO user(useremail, userpassword)"; 
+            sql+="VALUES(@useremail, @userpassword)";
             db.Open();
             db.Insert(sql, values);
             db.Close();
@@ -73,7 +73,7 @@ namespace API.Data
                  {"@userid",user.Userid},
                  {"@useremail",user.Useremail},
                  {"@userpassword",user.Userpassword},
-                 {"@useradmin",user.Admin},
+                 {"@admin",user.Admin},
              };
 
              return values;
