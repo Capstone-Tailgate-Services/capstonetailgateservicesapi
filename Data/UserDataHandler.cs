@@ -21,7 +21,7 @@ namespace API.Data
         {
             string sql = "SELECT admin FROM user";
             db.Open();
-            if(user.Admin == 1)
+            if(user.Admin == 2)
             {
                 sql+= "WHERE useremail= @useremail and userpassword=@userpassword";
             }
