@@ -16,7 +16,7 @@ namespace API.Data
         }
          public List<Review> Select(){
             db.Open();
-            string sql = "SELECT * FROM reviews order by id desc";           
+            string sql = "SELECT * FROM reviews order by id";           
             List<ExpandoObject> results = db.Select(sql);
 
             List<Review> review = new List<Review>();
@@ -36,7 +36,7 @@ namespace API.Data
          public void Update(Review review)
          {
             /*review.Date = DateTime.Now;*/
-            string sql = "UPDATE reviews SET reviewstext=@Reviewstext, @Reviewsauthor, @Reviewsrating, date=@date ";  
+            string sql = "UPDATE reviews SET reviewstext=@reviewstext, @reviewsauthor, @reviewsrating, date=@date ";  
             sql+="WHERE id=@id";
             var values = GetValues(review);
             db.Open();
