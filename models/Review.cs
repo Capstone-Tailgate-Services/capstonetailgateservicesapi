@@ -10,7 +10,6 @@ namespace API.models
         public string Reviewsauthor {get; set;}
         public string Reviewsrating {get; set;}
         public string Date {get; set;}
-        public string Useremail {get; set;}
         public IReviewDataHandler dataHandler{get; set;}
 
         public Review(){
