@@ -21,10 +21,6 @@ namespace API.Data
         {
             string sql = "SELECT * FROM user";
             db.Open();
-            /*if(user.Admin == 2)
-            {
-                sql+= "WHERE useremail= @useremail and userpassword=@userpassword";
-            }*/
             List<ExpandoObject> results = db.Select(sql);
 
             List<User> user = new List<User>();
@@ -41,29 +37,6 @@ namespace API.Data
             }
             db.Close();
             return user;
-        }
-        public List<User> Match(User user)
-        {
-            string sql = "SELECT * FROM user WHERE useremail= @useremail and userpassword=@userpassword";
-            var values = GetValues(user);
-            db.Open();
-
-            List<ExpandoObject> results = db.Select(sql);
-
-            List<User> userMatch = new List<User>();
-            foreach(dynamic item in results)
-            {
-                User temp = new User()
-                {
-                Userid = item.userid, 
-                Useremail = item.useremail,
-                Userpassword = item.userpassword,
-                Admin = item.admin,
-                };
-                userMatch.Add(temp);
-            }
-            db.Close();
-            return userMatch;
         }
          public void Update(User user)
          {
@@ -90,14 +63,6 @@ namespace API.Data
             db.Insert(sql, values);
             db.Close();
          }
-         /*public void FindUser(User user)
-        {
-            string sql = "SELECT FROM user WHERE admin = 0";
-            var values = GetValues(user);
-            db.Open();
-            db.Update(sql, values);
-            db.Close();
-        }*/
         
          public Dictionary<string,object> GetValues(User user)
          {

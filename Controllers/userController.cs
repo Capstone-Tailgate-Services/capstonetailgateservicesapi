@@ -24,22 +24,6 @@ namespace API.Controllers
             return dataHandler.Select();
         }
 
-        // MATCH: api/user
-        [EnableCors("OpenPolicy")]
-        [HttpPut]
-        public List<User> MatchUser([FromBody] User value)
-        {
-            IUserDataHandler dataHandler = new UserDataHandler();
-            return dataHandler.Match(value);
-        }
-
-        /*[EnableCors("OpenPolicy")]
-        [HttpGet]
-        public void FindUser([FromBody] User value)
-        {
-            value.dataHandler.FindUser(value);
-        }*/
-
         // POST: api/user
         [EnableCors("OpenPolicy")]
         [HttpPost]
