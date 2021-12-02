@@ -38,6 +38,29 @@ namespace API.Data
             db.Close();
             return user;
         }
+        public List<User> Match(User user)
+        {
+            string sql = "SELECT * FROM user WHERE useremail= @useremail and userpassword=@userpassword";
+            var values = GetValues(user);
+            db.Open();
+
+            List<ExpandoObject> results = db.Select(sql);
+
+            List<User> userMatch = new List<User>();
+            foreach(dynamic item in results)
+            {
+                User temp = new User()
+                {
+                Userid = item.userid, 
+                Useremail = item.useremail,
+                Userpassword = item.userpassword,
+                Admin = item.admin,
+                };
+                userMatch.Add(temp);
+            }
+            db.Close();
+            return userMatch;
+        }
          public void Update(User user)
          {
             string sql = "UPDATE user SET useremail=@useremail, userpassword=@userpassword ";  
