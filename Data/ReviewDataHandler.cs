@@ -36,7 +36,7 @@ namespace API.Data
          public void Update(Review review)
          {
             /*review.Date = DateTime.Now;*/
-            string sql = "UPDATE reviews SET reviewstext=@reviewstext, @reviewsauthor, @reviewsrating, date=@date ";  
+            string sql = "UPDATE reviews SET reviewstext=@reviewstext, reviewsauthor=@reviewsauthor, reviewsrating=@reviewsrating, date=@date ";  
             sql+="WHERE id=@id";
             var values = GetValues(review);
             db.Open();
