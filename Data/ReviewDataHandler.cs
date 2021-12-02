@@ -27,7 +27,6 @@ namespace API.Data
                 Reviewsauthor = item.reviewsauthor,
                 Reviewsrating  = item.reviewsrating,
                 Date = item.date,
-                Useremail = item.useremail,
                 };
             review.Add(temp);
             }
@@ -71,7 +70,6 @@ namespace API.Data
                  {"@reviewsauthor",review.Reviewsauthor},
                  {"@reviewsrating",review.Reviewsrating},
                  {"@date",review.Date},
-                 {"@useremail",review.Useremail},
              };
 
              return values;
