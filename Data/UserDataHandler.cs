@@ -90,14 +90,14 @@ namespace API.Data
             db.Insert(sql, values);
             db.Close();
          }
-         public void FindUser(User user)
+         /*public void FindUser(User user)
         {
             string sql = "SELECT FROM user WHERE admin = 0";
             var values = GetValues(user);
             db.Open();
             db.Update(sql, values);
             db.Close();
-        }
+        }*/
         
          public Dictionary<string,object> GetValues(User user)
          {

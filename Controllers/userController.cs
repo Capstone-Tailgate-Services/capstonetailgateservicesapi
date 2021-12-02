@@ -33,12 +33,12 @@ namespace API.Controllers
             return dataHandler.Match(value);
         }*/
 
-        [EnableCors("OpenPolicy")]
+        /*[EnableCors("OpenPolicy")]
         [HttpGet]
         public void FindUser([FromBody] User value)
         {
             value.dataHandler.FindUser(value);
-        }
+        }*/
 
         // POST: api/user
         [EnableCors("OpenPolicy")]
