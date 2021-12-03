@@ -16,7 +16,7 @@ namespace API.Data
         }
          public List<Review> Select(){
             db.Open();
-            string sql = "SELECT * FROM reviews order by id";           
+            string sql = "SELECT * FROM reviews order by id desc";           
             List<ExpandoObject> results = db.Select(sql);
 
             List<Review> review = new List<Review>();
@@ -26,6 +26,7 @@ namespace API.Data
                 Reviewstext = item.reviewstext,
                 Reviewsauthor = item.reviewsauthor,
                 Reviewsrating  = item.reviewsrating,
+                Date = item.date,
                 };
             review.Add(temp);
             }
@@ -34,7 +35,8 @@ namespace API.Data
          }
          public void Update(Review review)
          {
-            string sql = "UPDATE reviews SET reviewstext=@reviewstext, reviewsauthor=@reviewsauthor, reviewsrating=@reviewsrating";  
+            /*review.Date = DateTime.Now;*/
+             string sql = "UPDATE reviews SET reviewstext=@reviewstext, reviewsauthor=@reviewsauthor, reviewsrating=@reviewsrating, date=@date "; 
             sql+="WHERE id=@id";
             var values = GetValues(review);
             db.Open();
@@ -50,9 +52,10 @@ namespace API.Data
             db.Close();
          }
          public void Insert(Review review){
+            /*review.Date = DateTime.Now;*/
             var values = GetValues(review);
-            string sql = "INSERT INTO reviews(reviewstext, reviewsauthor, reviewsrating)"; 
-            sql+="VALUES(@reviewstext, @reviewsauthor, @reviewsrating)";
+            string sql = "INSERT INTO reviews(reviewstext, reviewsauthor, reviewsrating, date)"; 
+            sql+="VALUES(@reviewstext, @reviewsauthor, @reviewsrating, @date)";
             db.Open();
             db.Insert(sql, values);
             db.Close();
@@ -66,6 +69,7 @@ namespace API.Data
                  {"@reviewstext",review.Reviewstext},
                  {"@reviewsauthor",review.Reviewsauthor},
                  {"@reviewsrating",review.Reviewsrating},
+                 {"@date",review.Date},
              };
 
              return values;
